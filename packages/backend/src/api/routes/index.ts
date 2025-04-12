@@ -1,10 +1,14 @@
 import { Router } from 'express';
 import referenceDataRoutes from './reference-data.routes';
+import authRoutes from './auth.routes';
+import userRoutes from './user.routes';
 
 const router = Router();
 
 // Mount route groups
 router.use('/reference', referenceDataRoutes);
+router.use('/auth', authRoutes);
+router.use('/user', userRoutes);
 
 // Health check route
 router.get('/health', (req, res) => {
